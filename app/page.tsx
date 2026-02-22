@@ -34,21 +34,21 @@ export default function Home() {
 				</Grid>
 				<Grid size={{ md: 6, xs: 12 }}>
 					<Typography variant="body1">
-						Welcome to my daily productivity suite (dps)! This is a
-						personal project designed to help manage daily tasks,
-						track progress, and enhance productivity.
+						Welcome to my page, look around to get an idea of the type of work
+						that I do and projects that interest me.
 					</Typography>
 					<Typography variant="body1">
-						This aims to serve as both my personal portfolio, as
-						well as my daily task manager and simply a sandbox where
-						I can develop around ideas that I am passionate about.
+						This aims to serve as both my personal portfolio, as well as my
+						daily task manager and simply a sandbox where I can develop around
+						ideas that I am passionate about. (this is the static frontend for
+						github hosting)
 					</Typography>
 				</Grid>
 			</Grid>
 
 			<Box sx={{ p: 1, m: 1, bgcolor: "warning.main" }}>
 				<Typography variant="h5" gutterBottom>
-					Projects
+					Project Showcase
 				</Typography>
 				{/* <List>
 					<ListItem>dps_office (frontend)</ListItem>
@@ -84,7 +84,6 @@ export default function Home() {
 					mt: 2,
 					rounded: 50,
 					boxShadow: 3,
-
 				}}
 			>
 				(TMP)
@@ -95,11 +94,7 @@ export default function Home() {
 					height={128}
 					className="rounded-full shadow-lg"
 				/>
-				<Button
-					component="a"
-					href="https://github.com/danmuck"
-					target="_blank"
-				>
+				<Button component="a" href="https://github.com/danmuck" target="_blank">
 					<GitHubIcon fontSize="large" sx={{ fontSize: 40 }} />
 				</Button>
 				<Button
