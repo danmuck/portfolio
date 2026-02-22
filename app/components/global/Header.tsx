@@ -1,16 +1,9 @@
-import { cookies } from "next/headers";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { AppBar, Toolbar, Box, Button } from "@mui/material";
 
-const GlobalHeader: React.FC = async () => {
-	const cooks = await cookies();
-
-	const token = cooks.get("jwt")?.value || "";
-	const username = cooks.get("username")?.value || "";
-
-	const isLoggedIn = Boolean(token);
+const GlobalHeader: React.FC = () => {
 	return (
 		<AppBar position="static" elevation={1}>
 			<Toolbar
@@ -77,39 +70,7 @@ const GlobalHeader: React.FC = async () => {
 					</Button>
 				</Box>
 
-				{/* administrator navigation */}
-				<Box sx={{ flexGrow: 1 }}>
-					{username !== "danmuck_" ? (
-						<></>
-					) : (
-						<>
-							<Button
-								component={Link}
-								href="/dashboard"
-								color="inherit"
-							>
-								Dashboard
-							</Button>
-
-							<Button
-								component={Link}
-								href="/admin/new"
-								color="inherit"
-							>
-								[dev]
-							</Button>
-							<Button
-								component={Link}
-								href="/users"
-								color="inherit"
-							>
-								Users
-							</Button>
-						</>
-					)}
-				</Box>
-
-				<Button component={Link} href="/registry" color="inherit">
+	<Button component={Link} href="/registry" color="inherit">
 					Registry
 				</Button>
 			</Toolbar>

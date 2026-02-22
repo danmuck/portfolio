@@ -11,6 +11,7 @@ type ProjectImagesProps = {
 };
 
 const SCROLL_AMOUNT = 300; // pixels to scroll per click
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const ProjectImages: React.FC<ProjectImagesProps> = ({
 	images,
@@ -52,7 +53,7 @@ const ProjectImages: React.FC<ProjectImagesProps> = ({
 					<Box key={index} sx={{ flex: "0 0 auto", height }}>
 						<CardMedia
 							component="img"
-							image={src}
+							image={`${BASE_PATH}${src.startsWith("/") ? src : "/" + src}`}
 							alt={`preview-${index}`}
 							loading="lazy"
 							sx={{

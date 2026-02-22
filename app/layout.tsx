@@ -20,6 +20,9 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
+			<head>
+				<base href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/`} />
+			</head>
 			<body>
 				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
 					<ThemeProvider theme={theme}>
