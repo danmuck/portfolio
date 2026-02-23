@@ -85,7 +85,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 {TechLogoMap[t]}
               </Box>
             ) : (
-              <Chip key={t} label={t} variant="outlined" size="medium" />
+              <Chip
+                key={t}
+                label={t}
+                size="medium"
+                sx={{
+                  bgcolor: 'info.dark',
+                  color: '#111',
+                  fontWeight: 600,
+                  fontSize: '0.8rem',
+                  borderRadius: 1,
+                }}
+              />
             )
           )}
         </Stack>
@@ -139,7 +150,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <li key={item.task}>
                   <Typography
                     variant="body2"
-                    color={item.completed ? "success.main" : "text.secondary"}
+                    // success.dark: palette inverts per mode — resolves to bright #02d4a3 in dark
+                    color={item.completed ? "success.dark" : "text.secondary"}
                   >
                     {item.completed ? (
                       <CheckCircleOutlineIcon fontSize="small" />
