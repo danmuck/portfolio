@@ -9,7 +9,6 @@ import {
 	Box,
 } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import ModeSwitch from "./components/ModeSwitch";
 import theme from "@/theme";
 
 export const metadata: Metadata = {
@@ -37,16 +36,6 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 							}}
 						>
 							<GlobalHeader />
-							<Box
-								sx={{
-									position: "absolute",
-									top: 64,
-									right: 8,
-									zIndex: 669,
-								}}
-							>
-								<ModeSwitch />
-							</Box>
 							<Box component="main" sx={{ flexGrow: 1, p: 4 }}>
 								{props.children}
 							</Box>

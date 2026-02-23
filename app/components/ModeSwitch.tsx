@@ -1,11 +1,11 @@
 "use client";
 import * as React from "react";
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useColorScheme } from "@mui/material/styles";
+import ComputerIcon from "@mui/icons-material/Computer";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 export default function ModeSwitch() {
 	const { mode, setMode } = useColorScheme();
@@ -13,33 +13,22 @@ export default function ModeSwitch() {
 		return null;
 	}
 	return (
-		<Box
-			sx={{
-				display: "flex",
-				justifyContent: "flex-end",
-				mt: 1,
-				p: 1,
-				color: "info.main",
-				borderRadius: 1,
-				backgroundColor: "background.default",
-			}}
+		<ToggleButtonGroup
+			value={mode}
+			exclusive
+			onChange={(_, val) => val && setMode(val)}
+			size="small"
+			sx={{ ml: 1, "& .MuiToggleButton-root": { color: "inherit", borderColor: "rgba(128,128,128,0.3)" } }}
 		>
-			<FormControl>
-				<InputLabel id="mode-select-label">Theme</InputLabel>
-				<Select
-					labelId="mode-select-label"
-					id="mode-select"
-					value={mode}
-					onChange={(event) =>
-						setMode(event.target.value as typeof mode)
-					}
-					label="Theme"
-				>
-					<MenuItem value="system">System</MenuItem>
-					<MenuItem value="light">Light</MenuItem>
-					<MenuItem value="dark">Dark</MenuItem>
-				</Select>
-			</FormControl>
-		</Box>
+			<ToggleButton value="system" aria-label="System theme">
+				<ComputerIcon fontSize="small" />
+			</ToggleButton>
+			<ToggleButton value="light" aria-label="Light theme">
+				<LightModeIcon fontSize="small" />
+			</ToggleButton>
+			<ToggleButton value="dark" aria-label="Dark theme">
+				<DarkModeIcon fontSize="small" />
+			</ToggleButton>
+		</ToggleButtonGroup>
 	);
 }

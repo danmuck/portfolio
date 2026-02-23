@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { AppBar, Toolbar, Box, Button } from "@mui/material";
+import ModeSwitch from "@/app/components/ModeSwitch";
 
 const GlobalHeader: React.FC = () => {
 	return (
@@ -70,9 +71,10 @@ const GlobalHeader: React.FC = () => {
 					</Button>
 				</Box>
 
-	<Button component={Link} href="/registry" color="inherit">
+				<Button component={Link} href="/registry" color="inherit">
 					Registry
 				</Button>
+				<ModeSwitch />
 			</Toolbar>
 		</AppBar>
 	);

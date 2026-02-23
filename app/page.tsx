@@ -61,7 +61,7 @@ export default function Home() {
 		<>
 			<Container maxWidth="lg" sx={{ py: 4 }}>
 				{/* Hero */}
-				<Grid container spacing={4} sx={{ py: 4, position: "relative" }}>
+				<Grid container spacing={4} sx={{ py: 2, position: "relative" }}>
 					<Box
 						sx={{
 							position: "absolute",
@@ -70,6 +70,7 @@ export default function Home() {
 							opacity: 0.07,
 							zIndex: 0,
 							pointerEvents: "none",
+							display: { xs: "none", md: "block" },
 						}}
 					>
 						<Image src="/banner.svg" alt="" width={400} height={280} />
@@ -157,6 +158,8 @@ export default function Home() {
 										borderColor: "info.light",
 										height: "100%",
 										boxShadow: 2,
+										transition: "box-shadow 0.2s ease",
+										"&:hover": { boxShadow: 6 },
 									}}
 								>
 									<CardContent>
@@ -177,6 +180,7 @@ export default function Home() {
 													label={t}
 													size="small"
 													variant="outlined"
+													sx={{ borderColor: "info.light" }}
 												/>
 											))}
 										</Stack>
@@ -229,16 +233,15 @@ export default function Home() {
 						mt: 6,
 						mb: 2,
 						p: { xs: 3, md: 5 },
-						bgcolor: "primary.main",
-						color: "primary.contrastText",
-						textAlign: "center",
-						borderRadius: 2,
+						borderLeft: "3px solid",
+						borderColor: "info.light",
+						borderRadius: 1,
 					}}
 				>
 					<Typography variant="h6" fontWeight={600} sx={{ mb: 0.5 }}>
 						Available for engineering consulting
 					</Typography>
-					<Typography variant="caption" sx={{ color: "primary.contrastText", opacity: 0.5 }}>
+					<Typography variant="caption" sx={{ color: "text.secondary" }}>
 						Services page coming soon.
 					</Typography>
 				</Box>

@@ -44,6 +44,9 @@ export default function AboutPage() {
         >
           {"// ABOUT"}
         </Typography>
+        <Typography variant="h5" fontWeight={600} sx={{ mb: 1.5 }}>
+          Software Engineer
+        </Typography>
         <Typography variant="body1" sx={{ maxWidth: 640 }}>
           Software engineer with a focus on distributed systems, networking, and
           developer tooling. I build things from scratch to understand how they
@@ -72,10 +75,16 @@ export default function AboutPage() {
             pl: 3,
             display: "flex",
             flexDirection: "column",
-            gap: 3,
+            gap: 2,
           }}
         >
-          <Box>
+          <Box
+            sx={{
+              bgcolor: "background.paper",
+              borderRadius: 1,
+              p: 2,
+            }}
+          >
             <Typography
               variant="overline"
               sx={{ color: "text.disabled", letterSpacing: 1 }}
@@ -89,7 +98,13 @@ export default function AboutPage() {
               B.S. Computer Science — School of Engineering and Applied Sciences
             </Typography>
           </Box>
-          <Box>
+          <Box
+            sx={{
+              bgcolor: "background.paper",
+              borderRadius: 1,
+              p: 2,
+            }}
+          >
             <Typography
               variant="overline"
               sx={{ color: "text.disabled", letterSpacing: 1 }}
@@ -143,7 +158,13 @@ export default function AboutPage() {
                   </Typography>
                   <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                     {items.map((skill) => (
-                      <Chip key={skill} label={skill} size="small" />
+                      <Chip
+                        key={skill}
+                        label={skill}
+                        size="small"
+                        variant="outlined"
+                        sx={{ borderColor: "info.light" }}
+                      />
                     ))}
                   </Box>
                 </CardContent>
