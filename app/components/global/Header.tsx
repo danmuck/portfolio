@@ -15,7 +15,7 @@ const GlobalHeader: React.FC = () => {
 			>
 				{/* logo & title */}
 				<Box sx={{ display: "flex", alignItems: "center", mr: 4 }}>
-					<Link href="/users/danmuck/profile" passHref>
+					<Link href="/" passHref>
 						<Box
 							component="div"
 							sx={{
@@ -62,7 +62,7 @@ const GlobalHeader: React.FC = () => {
 					</Button>
 					<Button
 						component={Link}
-						href="/about"
+						href="/blog"
 						color="inherit"
 						sx={{ float: "right" }}
 					>

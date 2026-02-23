@@ -1,110 +1,248 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Button } from "@mui/material";
-import { Container, Grid, Box, Typography } from "@mui/material";
+import Link from "next/link";
+import {
+	Button,
+	IconButton,
+	Container,
+	Grid,
+	Box,
+	Typography,
+	Card,
+	CardContent,
+	Stack,
+	Chip,
+	Divider,
+} from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MyInfoCard from "./components/MyInfoCard";
+
+const featuredProjects = [
+	{
+		title: "Kademlia DHT",
+		description:
+			"Distributed key-value store using the Kademlia protocol over gRPC.",
+		tech: ["Golang", "gRPC", "protobuf"],
+	},
+	{
+		title: "Raft KV Store",
+		description:
+			"Raft consensus for leader election and log replication backed by an in-memory KV store.",
+		tech: ["Golang", "protobuf"],
+	},
+	{
+		title: "dps_office",
+		description:
+			"Personal productivity suite with user management and admin dashboard.",
+		tech: ["Next.js", "TypeScript", "MUI"],
+	},
+	{
+		title: "Bytecode Interpreter",
+		description:
+			"Interpreter for a custom bytecode language with closures, higher-order functions, and streams.",
+		tech: ["OCaml"],
+	},
+];
+
+const interests = [
+	"Network Engineering",
+	"Client / Server",
+	"P2P & Distributed Systems",
+	"Cloud Infrastructure",
+	"Terminal Tooling",
+	"Clean Frontends",
+];
+
 export default function Home() {
 	return (
-		<Container
-			maxWidth="lg"
-			sx={{
-				py: 4,
-				borderRadius: 2,
-			}}
-		>
-			<Typography
-				variant="h5"
-				align="center"
-				gutterBottom
-				sx={{
-					p: 2,
-					color: "warning.main",
-					backgroundColor: "error.main",
-				}}
-			>
-				[ -- UNDER CONSTRUCTION -- ]
-			</Typography>
+		<>
+			<Container maxWidth="lg" sx={{ py: 4 }}>
+				{/* Hero */}
+				<Grid container spacing={4} sx={{ py: 4, position: "relative" }}>
+					<Box
+						sx={{
+							position: "absolute",
+							bottom: 0,
+							left: -40,
+							opacity: 0.07,
+							zIndex: 0,
+							pointerEvents: "none",
+						}}
+					>
+						<Image src="/banner.svg" alt="" width={400} height={280} />
+					</Box>
 
-			<Grid container spacing={4} sx={{ py: 4 }}>
-				<Grid size={{ md: 6, xs: 12 }} sx={{ textAlign: "center" }}>
-					<MyInfoCard />
+					<Grid
+						size={{ md: 6, xs: 12 }}
+						sx={{ display: "flex", justifyContent: "center", zIndex: 1 }}
+					>
+						<MyInfoCard />
+					</Grid>
+
+					<Grid
+						size={{ md: 6, xs: 12 }}
+						sx={{
+							zIndex: 1,
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+						}}
+					>
+						<Typography
+							variant="overline"
+							sx={{ color: "info.light", letterSpacing: 2, mb: 0.5 }}
+						>
+							SOFTWARE ENGINEER
+						</Typography>
+						<Typography
+							variant="h4"
+							fontWeight={700}
+							sx={{ letterSpacing: -0.5, mb: 2 }}
+						>
+							danmuck
+						</Typography>
+						<Typography variant="body1" sx={{ mb: 3 }}>
+							I build distributed systems, developer tooling, and clean
+							interfaces. Passionate about networking, p2p protocols, and the
+							craft of software.
+						</Typography>
+						<Box sx={{ display: "flex", gap: 1 }}>
+							<IconButton
+								component="a"
+								href="https://github.com/danmuck"
+								target="_blank"
+								rel="noopener noreferrer"
+								size="large"
+								aria-label="GitHub"
+							>
+								<GitHubIcon sx={{ fontSize: 32 }} />
+							</IconButton>
+							<IconButton
+								component="a"
+								href="https://www.linkedin.com/in/danmuck/"
+								target="_blank"
+								rel="noopener noreferrer"
+								size="large"
+								aria-label="LinkedIn"
+							>
+								<LinkedInIcon sx={{ fontSize: 32 }} />
+							</IconButton>
+						</Box>
+					</Grid>
 				</Grid>
-				<Grid size={{ md: 6, xs: 12 }}>
-					<Typography variant="body1">
-						Welcome to my page, look around to get an idea of the type of work
-						that I do and projects that interest me.
-					</Typography>
-					<Typography variant="body1">
-						This aims to serve as both my personal portfolio, as well as my
-						daily task manager and simply a sandbox where I can develop around
-						ideas that I am passionate about. (this is the static frontend for
-						github hosting)
-					</Typography>
-				</Grid>
-			</Grid>
 
-			<Box sx={{ p: 1, m: 1, bgcolor: "warning.main" }}>
-				<Typography variant="h5" gutterBottom>
-					Project Showcase
-				</Typography>
-				{/* <List>
-					<ListItem>dps_office (frontend)</ListItem>
-					<ListItem>dps_http (backend)</ListItem>
-					<ListItem>dps_net (udp server)</ListItem>
-					<ListItem>dps_files (file server)</ListItem>
-					<ListItem>Kademlia DHT</ListItem>
-					<ListItem>Raft with KV Store</ListItem>
-					<ListItem>
-						Learning Management System API (team project)
-					</ListItem>
-				</List> */}
-			</Box>
-			<Box sx={{ p: 1, m: 1, bgcolor: "warning.main" }}>
-				<Typography variant="h5" gutterBottom>
-					Aspirations
-				</Typography>
-				{/* <List>
-					<ListItem>Network Engineering</ListItem>
-					<ListItem>
-						Client/Server, p2p, Cloud infrastructure
-					</ListItem>
-					<ListItem>Terminal tooling && clean frontends</ListItem>
-					<ListItem>Improve my skills across the stacks</ListItem>
-				</List> */}
-			</Box>
+				{/* Selected Work */}
+				<Box sx={{ py: 4 }}>
+					<Divider sx={{ borderColor: "info.light", opacity: 0.4, mb: 3 }} />
+					<Typography
+						variant="overline"
+						sx={{
+							letterSpacing: 2,
+							color: "text.secondary",
+							display: "block",
+							mb: 2,
+						}}
+					>
+						{"// SELECTED WORK"}
+					</Typography>
+					<Grid container spacing={2}>
+						{featuredProjects.map((p) => (
+							<Grid size={{ md: 6, xs: 12 }} key={p.title}>
+								<Card
+									sx={{
+										borderLeft: "3px solid",
+										borderColor: "info.light",
+										height: "100%",
+										boxShadow: 2,
+									}}
+								>
+									<CardContent>
+										<Typography variant="h6" fontWeight={600} gutterBottom>
+											{p.title}
+										</Typography>
+										<Typography
+											variant="body2"
+											color="text.secondary"
+											sx={{ mb: 2 }}
+										>
+											{p.description}
+										</Typography>
+										<Stack direction="row" spacing={1} flexWrap="wrap">
+											{p.tech.map((t) => (
+												<Chip
+													key={t}
+													label={t}
+													size="small"
+													variant="outlined"
+												/>
+											))}
+										</Stack>
+									</CardContent>
+								</Card>
+							</Grid>
+						))}
+					</Grid>
+					<Box sx={{ mt: 2, textAlign: "right" }}>
+						<Button
+							component={Link}
+							href="/projects"
+							endIcon={<ArrowForwardIcon />}
+							color="inherit"
+						>
+							View all projects
+						</Button>
+					</Box>
+					<Divider sx={{ borderColor: "info.light", opacity: 0.4, mt: 3 }} />
+				</Box>
 
-			<Box
-				sx={{
-					display: "flex",
-					justifyContent: "center",
-					gap: 2,
-					mt: 2,
-					rounded: 50,
-					boxShadow: 3,
-				}}
-			>
-				(TMP)
-				<Image
-					src="/full_logo.svg"
-					alt="danmuck"
-					width={128}
-					height={128}
-					className="rounded-full shadow-lg"
-				/>
-				<Button component="a" href="https://github.com/danmuck" target="_blank">
-					<GitHubIcon fontSize="large" sx={{ fontSize: 40 }} />
-				</Button>
-				<Button
-					component="a"
-					href="https://www.linkedin.com/in/danmuck/"
-					target="_blank"
+				{/* Interests */}
+				<Box sx={{ py: 3 }}>
+					<Typography
+						variant="overline"
+						sx={{
+							letterSpacing: 2,
+							color: "text.secondary",
+							display: "block",
+							mb: 2,
+						}}
+					>
+						{"// INTERESTS"}
+					</Typography>
+					<Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+						{interests.map((interest) => (
+							<Chip
+								key={interest}
+								label={interest}
+								variant="outlined"
+								sx={{ borderColor: "info.light" }}
+							/>
+						))}
+					</Box>
+				</Box>
+
+				{/* Consulting placeholder */}
+				<Box
+					sx={{
+						mt: 6,
+						mb: 2,
+						p: { xs: 3, md: 5 },
+						bgcolor: "primary.main",
+						color: "primary.contrastText",
+						textAlign: "center",
+						borderRadius: 2,
+					}}
 				>
-					<LinkedInIcon fontSize="large" sx={{ fontSize: 40 }} />
-				</Button>
-			</Box>
-		</Container>
+					<Typography variant="h6" fontWeight={600} sx={{ mb: 0.5 }}>
+						Available for engineering consulting
+					</Typography>
+					<Typography variant="caption" sx={{ color: "primary.contrastText", opacity: 0.5 }}>
+						Services page coming soon.
+					</Typography>
+				</Box>
+			</Container>
+		</>
 	);
 }

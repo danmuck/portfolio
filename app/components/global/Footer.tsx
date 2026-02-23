@@ -21,7 +21,7 @@ const GlobalFooter: React.FC = () => {
 					frontend:
 				</Typography>
 				<Typography variant="body2">
-					Next.js // React // Typescript // Tailwind CSS
+					Next.js // React // TypeScript // MUI
 				</Typography>
 			</Box>
 			<Box sx={{ display: "flex", gap: 2, alignItems: "center", mb: 1 }}>

@@ -1,126 +1,157 @@
-"use client";
 import React from "react";
-import Image from "next/image";
-import { Button } from "@mui/material";
 import {
-	Container,
-	Grid,
-	Box,
-	Typography,
-	List,
-	ListItem,
+  Container,
+  Grid,
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  Chip,
 } from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-export default function Home() {
-	return (
-		<Container
-			maxWidth="lg"
-			sx={{
-				py: 4,
 
-				borderRadius: 2,
-			}}
-		>
-			<Typography
-				variant="h5"
-				align="center"
-				gutterBottom
-				sx={{
-					p: 2,
-					color: "warning.main",
-					backgroundColor: "error.main",
-				}}
-			>
-				[ -- UNDER CONSTRUCTION -- ]
-			</Typography>
+const skillCategories = [
+  {
+    label: "Languages",
+    items: ["Golang", "C", "Python", "Rust", "TypeScript"],
+  },
+  {
+    label: "Tooling",
+    items: ["UNIX / macOS", "Docker", "Git", "MongoDB", "Postgres", "Agile"],
+  },
+  {
+    label: "Frameworks",
+    items: ["Node.js", "React", "Next.js", "Go-Gin", "Django"],
+  },
+  {
+    label: "Networking",
+    items: ["HTTP", "TCP / UDP", "WebRTC", "WebSockets", "gRPC"],
+  },
+];
 
-			<Grid container spacing={4} sx={{ py: 4 }}>
-				<Grid size={{ md: 6, xs: 6 }}>
-					<Typography variant="body1">
-						Welcome to my daily productivity suite (dps)! This is a
-						personal project designed to help manage daily tasks,
-						track progress, and enhance productivity.
-					</Typography>
-					<Typography variant="body1">
-						This aims to serve as both my personal portfolio, as
-						well as my daily task manager and simply a sandbox where
-						I can develop around ideas that I am passionate about.
-					</Typography>
-				</Grid>
-				<Grid size={{ md: 6, xs: 0 }} sx={{ textAlign: "center" }}>
-					<Box
-						sx={{
-							display: "flex",
-							justifyContent: "center",
-							gap: 2,
-							mt: 2,
-							rounded: 50,
-							boxShadow: 3,
-						}}
-					>
-						<Image
-							src="/full_logo.svg"
-							alt="danmuck"
-							width={256}
-							height={256}
-							className="rounded-full shadow-lg"
-						/>
-						<Button
-							component="a"
-							href="https://github.com/danmuck"
-							target="_blank"
-						>
-							<GitHubIcon
-								fontSize="large"
-								sx={{ fontSize: 40 }}
-							/>
-						</Button>
-						<Button
-							component="a"
-							href="https://www.linkedin.com/in/danmuck/"
-							target="_blank"
-						>
-							<LinkedInIcon
-								fontSize="large"
-								sx={{ fontSize: 40 }}
-							/>
-						</Button>
-					</Box>
-				</Grid>
-			</Grid>
+export default function AboutPage() {
+  return (
+    <Container maxWidth="lg" sx={{ py: 4 }}>
+      {/* Bio */}
+      <Box sx={{ mb: 5 }}>
+        <Typography
+          variant="overline"
+          sx={{
+            letterSpacing: 2,
+            color: "text.secondary",
+            display: "block",
+            mb: 1,
+          }}
+        >
+          {"// ABOUT"}
+        </Typography>
+        <Typography variant="body1" sx={{ maxWidth: 640 }}>
+          Software engineer with a focus on distributed systems, networking, and
+          developer tooling. I build things from scratch to understand how they
+          work — from consensus algorithms to bytecode interpreters to HTTP
+          servers. Currently based in Buffalo, NY.
+        </Typography>
+      </Box>
 
-			<Box sx={{ py: 2 }}>
-				<Typography variant="h5" gutterBottom>
-					Education
-				</Typography>
-				<List>
-					<ListItem>
-						SUNY at Buffalo, School of Engineering and Applied
-						Science
-					</ListItem>
-					<ListItem>Corning Community College</ListItem>
-				</List>
-			</Box>
-			<Box sx={{ py: 2 }}>
-				<Typography variant="h5" gutterBottom>
-					Skills
-				</Typography>
-				<List>
-					<ListItem>
-						Arsenal: Golang C Python Rust TypeScript
-					</ListItem>
-					<ListItem>
-						Tooling: UNIX/MacOS Docker Git MongoDB Postgres Agile
-					</ListItem>
-					<ListItem>
-						Frameworks: Node.js / React / Next.js / Go-Gin / Django
-					</ListItem>
-					<ListItem>
-						Networking: HTTP TCP/UDP WebRTC Websockets
-					</ListItem>
-				</List>
-			</Box>
-		</Container>
-	);
+      {/* Education */}
+      <Box sx={{ mb: 5 }}>
+        <Typography
+          variant="overline"
+          sx={{
+            letterSpacing: 2,
+            color: "text.secondary",
+            display: "block",
+            mb: 2,
+          }}
+        >
+          {"// EDUCATION"}
+        </Typography>
+        <Box
+          sx={{
+            borderLeft: "3px solid",
+            borderColor: "info.light",
+            pl: 3,
+            display: "flex",
+            flexDirection: "column",
+            gap: 3,
+          }}
+        >
+          <Box>
+            <Typography
+              variant="overline"
+              sx={{ color: "text.disabled", letterSpacing: 1 }}
+            >
+              2021 — 2025
+            </Typography>
+            <Typography variant="h6" fontWeight={600}>
+              University at Buffalo
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              B.S. Computer Science — School of Engineering and Applied Sciences
+            </Typography>
+          </Box>
+          <Box>
+            <Typography
+              variant="overline"
+              sx={{ color: "text.disabled", letterSpacing: 1 }}
+            >
+              2019 — 2021
+            </Typography>
+            <Typography variant="h6" fontWeight={600}>
+              Corning Community College
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              A.S. — Transfer
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Skills */}
+      <Box sx={{ mb: 4 }}>
+        <Typography
+          variant="overline"
+          sx={{
+            letterSpacing: 2,
+            color: "text.secondary",
+            display: "block",
+            mb: 2,
+          }}
+        >
+          {"// SKILLS"}
+        </Typography>
+        <Grid container spacing={2}>
+          {skillCategories.map(({ label, items }) => (
+            <Grid size={{ md: 6, xs: 12 }} key={label}>
+              <Card
+                sx={{
+                  borderLeft: "3px solid",
+                  borderColor: "info.light",
+                  height: "100%",
+                }}
+              >
+                <CardContent>
+                  <Typography
+                    variant="overline"
+                    sx={{
+                      letterSpacing: 2,
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 1,
+                    }}
+                  >
+                    {label}
+                  </Typography>
+                  <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                    {items.map((skill) => (
+                      <Chip key={skill} label={skill} size="small" />
+                    ))}
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Container>
+  );
 }
