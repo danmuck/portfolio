@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import { AppBar, Toolbar, Box, Button } from "@mui/material";
 import ModeSwitch from "@/app/components/ModeSwitch";
 
@@ -12,6 +11,9 @@ const GlobalHeader: React.FC = () => {
 					bgcolor: "primary.main",
 					color: "secondary.main",
 					maxHeight: 64,
+					"@media (prefers-color-scheme: light)": {
+						color: "#d4e3fb",
+					},
 				}}
 			>
 				{/* logo & title */}
@@ -25,12 +27,37 @@ const GlobalHeader: React.FC = () => {
 								textDecoration: "none",
 							}}
 						>
-							<Image
-								src="/full_logo.svg"
-								alt="danmuck"
+							<Box
+								component="svg"
+								xmlns="http://www.w3.org/2000/svg"
 								width={128}
-								height={128}
-							/>
+								height={30}
+								viewBox="0 0 650 150"
+								aria-label="danmuck"
+								sx={{
+									display: "block",
+									color: "#000000",
+									".light &": { color: "#dae2df" },
+								}}
+							>
+								<text
+									x="20"
+									y="110"
+									style={{
+										fontFamily: "'Arial Black', 'Helvetica Neue', sans-serif",
+										fontSize: "110px",
+										fontWeight: 900,
+										letterSpacing: "-5px",
+										fill: "currentColor",
+										stroke: "currentColor",
+										strokeWidth: 4,
+										strokeLinecap: "round",
+										strokeLinejoin: "round",
+									}}
+								>
+									dan muck.
+								</text>
+							</Box>
 						</Box>
 					</Link>
 				</Box>

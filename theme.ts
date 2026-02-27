@@ -35,8 +35,8 @@ const theme = createTheme({
       contrastThreshold: 4.5,
       mode: 'light',
       background: {
-        default: '#efefef',
-        paper: '#cddfcd',
+        default: '#dae2df',
+        paper: '#dae2df',
       },
       primary: {
         main: '#000000',
@@ -63,9 +63,9 @@ const theme = createTheme({
         contrastText: '#444',
       },
       info: {
-        main: '#284b63',
-        light: '#04c4de',
-        dark: '#238b99',
+        main: '#1c3148',
+        light: '#0b8695',
+        dark: '#1b6f7a',
         contrastText: '#444',
       },
       success: {
@@ -74,13 +74,13 @@ const theme = createTheme({
         dark: '#18967d',
         contrastText: '#444',
       },
-      text: { 
+      text: {
         primary: '#000000',
-        secondary: '#ffffff',
+        secondary: '#444444',
         disabled: '#BDBDBD',
       },
     },
-  }, 
+  },
   dark: {
       palette: {
         contrastThreshold: 4.5,
@@ -90,7 +90,7 @@ const theme = createTheme({
           paper: '#506e75', // #879996 #384f54
         },
         primary: {
-          main: '#ffffff',  
+          main: '#dae2df',
           light: '#aaaaaa',
           dark: '#555555',
           contrastText: '#222',
@@ -125,8 +125,8 @@ const theme = createTheme({
           dark: '#02d4a3',
           contrastText: '#444',
         },
-        text: { 
-          primary: '#ffffff',
+        text: {
+          primary: '#dae2df',
           secondary: '#000',
           disabled: '#BDBDBD',
         },
@@ -145,7 +145,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           color: '#000',
-          elevation: 2,
+          elevation: 5,
         },
       },
     },

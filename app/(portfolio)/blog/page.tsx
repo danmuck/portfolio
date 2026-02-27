@@ -82,7 +82,6 @@ export default function BlogPage() {
             sx={{
               borderLeft: "3px solid",
               borderColor: "info.light",
-              boxShadow: 2,
             }}
           >
             <CardContent>

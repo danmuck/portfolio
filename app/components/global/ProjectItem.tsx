@@ -42,7 +42,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       sx={{
         width: "100%",
         mb: 2,
-        boxShadow: 3,
         borderLeft: "3px solid",
         borderColor: "info.light",
       }}

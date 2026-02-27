@@ -157,9 +157,8 @@ export default function Home() {
 										borderLeft: "3px solid",
 										borderColor: "info.light",
 										height: "100%",
-										boxShadow: 2,
 										transition: "box-shadow 0.2s ease",
-										"&:hover": { boxShadow: 6 },
+										"&:hover": { boxShadow: 8 },
 									}}
 								>
 									<CardContent>
