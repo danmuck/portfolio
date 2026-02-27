@@ -68,57 +68,74 @@ export default function AboutPage() {
         >
           {"// EDUCATION"}
         </Typography>
-        <Box
-          sx={{
-            borderLeft: "3px solid",
-            borderColor: "info.light",
-            pl: 3,
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-          }}
-        >
-          <Box
-            sx={{
-              bgcolor: "background.paper",
-              borderRadius: 1,
-              p: 2,
-            }}
-          >
-            <Typography
-              variant="overline"
-              sx={{ color: "text.disabled", letterSpacing: 1 }}
+        <Grid container spacing={2}>
+          <Grid size={{ md: 6, xs: 12 }}>
+            <Box
+              sx={{
+                borderLeft: "3px solid",
+                borderColor: "info.light",
+                pl: 3,
+                bgcolor: "background.paper",
+                borderRadius: 1,
+                p: 2,
+                height: "100%",
+              }}
             >
-              2021 — 2025
-            </Typography>
-            <Typography variant="h6" fontWeight={600}>
-              University at Buffalo
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              B.S. Computer Science — School of Engineering and Applied Sciences
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              bgcolor: "background.paper",
-              borderRadius: 1,
-              p: 2,
-            }}
-          >
-            <Typography
-              variant="overline"
-              sx={{ color: "text.disabled", letterSpacing: 1 }}
+              <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 1 }}>
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="h6" fontWeight={600}>
+                    University at Buffalo
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.disabled", display: "block", mt: -0.5 }}
+                  >
+                    School of Engineering and Applied Sciences
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="overline"
+                  sx={{ color: "text.disabled", letterSpacing: 1, pt: 0.5 }}
+                >
+                  2025
+                </Typography>
+              </Box>
+              <Typography variant="body2" color="text.secondary">
+                B.S. Computer Science
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid size={{ md: 6, xs: 12 }}>
+            <Box
+              sx={{
+                borderLeft: "3px solid",
+                borderColor: "info.light",
+                pl: 3,
+                bgcolor: "background.paper",
+                borderRadius: 1,
+                p: 2,
+                height: "100%",
+              }}
             >
-              2019 — 2021
-            </Typography>
-            <Typography variant="h6" fontWeight={600}>
-              Corning Community College
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              A.S. — Transfer
-            </Typography>
-          </Box>
-        </Box>
+              <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 1 }}>
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="h6" fontWeight={600}>
+                    Corning Community College
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="overline"
+                  sx={{ color: "text.disabled", letterSpacing: 1, pt: 0.5 }}
+                >
+                  2023
+                </Typography>
+              </Box>
+              <Typography variant="body2" color="text.secondary">
+                A.S Computer Science
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
 
       {/* Skills */}

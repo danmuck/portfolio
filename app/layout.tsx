@@ -12,8 +12,8 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import theme from "@/theme";
 
 export const metadata: Metadata = {
-	title: "dps_office",
-	description: "daily assistant dashboard",
+	title: "danmuck",
+	description: "software engineer",
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {

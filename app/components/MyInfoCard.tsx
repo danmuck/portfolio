@@ -76,17 +76,18 @@ const UserCard: React.FC = () => (
 			}}
 		>
 			<CardActionArea sx={{ p: 2 }}>
-				<Button component="a" href="https://github.com/danmuck" target="_blank">
+				<Button component="a" href="https://github.com/danmuck" target="_blank" sx={{ color: '#ffffff' }}>
 					<GitHubIcon fontSize="large" sx={{ fontSize: 40 }} />
 				</Button>
 				<Button
 					component="a"
 					href="https://www.linkedin.com/in/danmuck/"
 					target="_blank"
+					sx={{ color: '#ffffff' }}
 				>
 					<LinkedInIcon fontSize="large" sx={{ fontSize: 40 }} />
 				</Button>
-				<Button component="a" href="mailto:admin@danmuck.dev" target="_blank">
+				<Button component="a" href="mailto:admin@danmuck.dev" target="_blank" sx={{ color: '#ffffff' }}>
 					<MailOutlineIcon fontSize="large" sx={{ fontSize: 40 }} />
 				</Button>
 			</CardActionArea>
